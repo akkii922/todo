@@ -3,8 +3,8 @@
 	<title>TODO</title>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<style type="text/css">
-	.yellow{
-		background:yellow;
+	.gray{
+		background:#eee;
 	}
 	.red{
 		color:red;
@@ -16,7 +16,7 @@
 
 	<div class="container">
 		<h3>Todo List</h3>
-		<input type="text" class="form-control" placeholder="Text input" ng-model="newItem">
+		<input type="text" class="form-control" placeholder="create your todos" ng-model="newItem">
 		<p class="help-block text-center red" ng-show="!newItem && empty">*Fill the field.</p>
 		<br>
 
@@ -33,7 +33,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr ng-repeat="todoList in todoLists">
+				<tr ng-repeat="todoList in todoLists" ng-class="{gray: editMode && $index == ind}">
 					<td>{{$index+1}}</td>
 					<td>{{todoList.name}}</td>
 					<td>{{todoList.edit}}</td>
